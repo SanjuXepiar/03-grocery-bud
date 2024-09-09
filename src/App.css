@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+.main {
+  text-align: center;
+  background: rgb(88, 196, 247);
+}
+.form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.listItem {
+  max-width: 100%;
+  /* background: red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+.item {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  /* gap: px; */
+}
+.button {
+  margin: 0 2px;
+  border: 0.5px solid black;
+  border-radius: 4px;
+}

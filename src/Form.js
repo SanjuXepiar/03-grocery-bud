@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { List } from "./List";
+import { toast } from "react-toastify";
 export const Form = () => {
   const [inputItem, setInputItem] = useState("");
   const [listItem, setListItem] = useState([]);
+
   const setLocal = (item) => {
     const data = JSON.stringify(item);
     localStorage.setItem("list", data);
   };
-  const getLocal = (listItem) => {
+  const getLocal = () => {
     const data = localStorage.getItem("list");
     if (data) {
       setListItem(JSON.parse(data));
+    } else {
+      setListItem([]);
     }
   };
   useEffect(() => {
@@ -19,15 +23,20 @@ export const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newItem = {
-      itemName: inputItem,
-      isChecked: false,
-      id: Math.random(),
-    };
-    const data = [newItem, ...listItem];
-    setListItem(data);
-    setLocal(data);
-    setInputItem("");
+    if (inputItem.length === 0) {
+      return toast.error("input cannot be empty");
+    } else {
+      const newItem = {
+        itemName: inputItem,
+        isChecked: false,
+        id: Math.random(),
+      };
+      const data = [newItem, ...listItem];
+      setListItem(data);
+      toast.success("item added");
+      setLocal(data);
+      setInputItem("");
+    }
   };
   const updateIsChecked = (id) => {
     const updatedList = listItem.map((item) => {
@@ -43,11 +52,12 @@ export const Form = () => {
     });
     setListItem(updatedList);
     setLocal(updatedList);
+    toast.success("item removed");
   };
 
   return (
     <>
-      <form style={{ background: "blue" }} onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form">
         <input
           type="text"
           value={inputItem}

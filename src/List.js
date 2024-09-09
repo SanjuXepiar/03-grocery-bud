@@ -3,7 +3,7 @@ import { Items } from "./Items";
 
 export const List = ({ items, updateIsChecked, handleDelete }) => {
   return (
-    <div>
+    <div style={{ margin: "0 auto", width: "30rem" }}>
       {items.map((item) => (
         <Items
           key={item.id}

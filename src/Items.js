@@ -1,15 +1,36 @@
 import React from "react";
-
+import "./App.css";
 export const Items = ({ item, updateIsChecked, handleDelete }) => {
   const { itemName, id, isChecked } = item;
 
   return (
-    <div className="listItem" style={{ display: "flex", gap: "2rem" }}>
-      <input type={"checkbox"} onChange={() => updateIsChecked(id)} />
-      <h4 style={{ textDecorationLine: isChecked && "line-through" }}>
-        {itemName}
-      </h4>
-      <button onClick={() => handleDelete(id)}>delete</button>
-    </div>
+    <>
+      <section className="listItem">
+        <div className="item">
+          <input
+            type={"checkbox"}
+            checked={isChecked}
+            onChange={() => updateIsChecked(id)}
+          />
+          <h4
+            style={{
+              textDecorationLine: isChecked && "line-through",
+              width: "70%",
+              textAlign: "left",
+              wordWrap: "break-word",
+            }}
+          >
+            {itemName}
+          </h4>
+        </div>
+        <button
+          className="button"
+          style={{ margin: "0 2px" }}
+          onClick={() => handleDelete(id)}
+        >
+          Delete
+        </button>
+      </section>
+    </>
   );
 };

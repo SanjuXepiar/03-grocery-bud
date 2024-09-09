@@ -1,9 +1,11 @@
-// import { useState } from "react";
+// import { ToastContainer } from "react-toastify";
+import "./App.css";
 import { Form } from "./Form";
 function App() {
   return (
-    <main style={{ textAlign: "center" }}>
-      <h2>Grocery Bud</h2>
+    <main className="main">
+      {/* <ToastContainer position="top" /> */}
+      <h2 style={{ marginTop: "5rem" }}>Grocery Bud</h2>
       <Form />
     </main>
   );
