@@ -60,7 +60,7 @@ export const Form = () => {
     <div>
       <form onSubmit={handleSubmit} className="form">
         <input
-          style={{ borderRadius: "3px", padding: "3px", margin: "4px" }}
+          style={{ borderRadius: "3px", padding: "3px" }}
           type="text"
           value={inputItem}
           autoFocus

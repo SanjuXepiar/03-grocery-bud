@@ -6,7 +6,9 @@ function App() {
     <main className="main">
       <ToastContainer position="top-center" autoClose={1500} />
 
-      <h2 style={{ marginTop: "5rem" }}>Grocery Bud</h2>
+      <h2 style={{ margin: "1rem", textDecorationLine: "underline" }}>
+        Grocery Bud
+      </h2>
       <Form />
     </main>
   );
