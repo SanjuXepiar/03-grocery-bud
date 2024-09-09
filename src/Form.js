@@ -59,11 +59,14 @@ export const Form = () => {
     <>
       <form onSubmit={handleSubmit} className="form">
         <input
+          style={{ borderRadius: "3px", padding: "3px", margin: "4px" }}
           type="text"
           value={inputItem}
           onChange={(e) => setInputItem(e.target.value)}
         />
-        <button type="submit">Add Item</button>
+        <button className="button" type="submit">
+          Add Item
+        </button>
       </form>
       <section>
         <List
