@@ -25,7 +25,7 @@ export const Items = ({ item, updateIsChecked, handleDelete }) => {
         </div>
         <button
           className="button"
-          style={{ margin: "0 2px" }}
+          style={{ margin: "0 2rem" }}
           onClick={() => handleDelete(id)}
         >
           Delete

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import { List } from "./List";
 import { toast } from "react-toastify";
 export const Form = () => {
@@ -56,25 +57,26 @@ export const Form = () => {
   };
 
   return (
-    <>
+    <div>
       <form onSubmit={handleSubmit} className="form">
         <input
           style={{ borderRadius: "3px", padding: "3px", margin: "4px" }}
           type="text"
           value={inputItem}
+          autoFocus
           onChange={(e) => setInputItem(e.target.value)}
         />
         <button className="button" type="submit">
           Add Item
         </button>
       </form>
-      <section>
+      <>
         <List
           items={listItem}
           updateIsChecked={updateIsChecked}
           handleDelete={handleDelete}
         />
-      </section>
-    </>
+      </>
+    </div>
   );
 };

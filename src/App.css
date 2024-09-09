@@ -4,13 +4,20 @@
   box-sizing: border-box;
 }
 .main {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 2px;
+  border-radius: 4px;
   text-align: center;
   background: rgb(88, 196, 247);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.form {
+form .form {
+  width: 80%;
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 0.5rem;
   margin-bottom: 2rem;
 }
